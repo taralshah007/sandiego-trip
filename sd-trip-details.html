@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Diego Trip Planner Itinerary</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind for Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for better aesthetics */
+        body {
+            background-color: #f7f9fb;
+        }
+        .tab-button.active {
+            border-bottom: 3px solid #f97316; /* Orange-500 */
+            color: #f97316;
+            font-weight: 600;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Mobile-first layout for itinerary */
+        .itinerary-item {
+            border-left: 3px solid #3b82f6; /* Blue-500 timeline indicator */
+        }
+        /* Hide the full table on small screens */
+        @media (max-width: 1023px) {
+            .itinerary-table {
+                display: none;
+            }
+        }
+        /* Hide the mobile cards on large screens */
+        @media (min-width: 1024px) {
+            .itinerary-cards {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased p-4 sm:p-8">
+
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-2xl p-6 md:p-10">
+
+        <!-- Header -->
+        <header class="mb-8 border-b pb-4">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-800">
+                🍊 San Diego Family Adventure
+            </h1>
+            <p class="mt-2 text-lg text-gray-600">
+                **Dates:** Nov 23 – 27, 2025 (5 Days) | **Travelers:** 2 Adults, 1 Child (Age 6)
+            </p>
+        </header>
+
+        <!-- Logistics & Transportation Card -->
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg mb-8 card-shadow">
+            <h2 class="text-xl font-bold text-yellow-800 mb-2 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Logistics & Transportation Advice
+            </h2>
+            <p class="text-gray-700">
+                For theme park days (LEGOLAND & SeaWorld), **driving is highly recommended** to avoid surge pricing and long wait times when leaving. Parking is typically **$25–$35 per day**.
+            </p>
+            <p class="text-gray-700 mt-1">
+                For the **hotel transfer** (Nov 25), the drive is **35–50 min**. An Uber is an option here (~$50–$70) if you prefer not to manage rental car parking at two hotels.
+            </p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <nav class="flex overflow-x-auto border-b border-gray-200 mb-6">
+            <button class="tab-button active flex-shrink-0 p-4 text-gray-500 hover:text-orange-500 transition duration-150" data-day="day1">Day 1: Arrival</button>
+            <button class="tab-button flex-shrink-0 p-4 text-gray-500 hover:text-orange-500 transition duration-150" data-day="day2">Day 2: LEGOLAND</button>
+            <button class="tab-button flex-shrink-0 p-4 text-gray-500 hover:text-orange-500 transition duration-150" data-day="day3">Day 3: Transfer</button>
+            <button class="tab-button flex-shrink-0 p-4 text-gray-500 hover:text-orange-500 transition duration-150" data-day="day4">Day 4: SeaWorld</button>
+            <button class="tab-button flex-shrink-0 p-4 text-gray-500 hover:text-orange-500 transition duration-150" data-day="day5">Day 5: Departure</button>
+        </nav>
+
+        <!-- Tab Content -->
+        <div id="itinerary-content">
+            <!-- Day 1 Content -->
+            <div id="day1" class="tab-content">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Day 1: Sunday, Nov 23 - Arrival & Carlsbad Setup</h3>
+                <p class="text-gray-500 mb-4">**Accommodation:** The Cassara Carlsbad, Tapestry Collection by Hilton</p>
+                <div class="itinerary-table">
+                    <table class="w-full text-left rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100 text-gray-600 uppercase text-sm">
+                            <tr>
+                                <th class="py-3 px-6">Time</th>
+                                <th class="py-3 px-6">Activity</th>
+                                <th class="py-3 px-6">Location</th>
+                                <th class="py-3 px-6">Transportation</th>
+                                <th class="py-3 px-6">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">3:00 PM</td>
+                                <td class="py-4 px-6">Check-in at The Cassara</td>
+                                <td class="py-4 px-6">Carlsbad</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Check-in time is generally after 4:00 PM. Arriving slightly early allows time for luggage.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">4:00 PM</td>
+                                <td class="py-4 px-6">Relax & Prepare Tickets</td>
+                                <td class="py-4 px-6">Hotel</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Verify your LEGOLAND/SEA LIFE tickets are ready on your phone or printed PDF.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">6:30 PM</td>
+                                <td class="py-4 px-6">Dinner (Vegetarian)</td>
+                                <td class="py-4 px-6">Urban Plates (Suggestion)</td>
+                                <td class="py-4 px-6">Drive / Uber (5-10 min)</td>
+                                <td class="py-4 px-6">Have a casual dinner close to the hotel.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">8:30 PM</td>
+                                <td class="py-4 px-6">Early Night</td>
+                                <td class="py-4 px-6">Hotel</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Get plenty of rest for a full day at LEGOLAND tomorrow!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerary-cards space-y-4">
+                    <!-- Cards for Mobile View -->
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">3:00 PM: Check-in at The Cassara</p>
+                        <p class="text-sm text-gray-600">Location: Carlsbad | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Check-in time is generally after 4:00 PM. Arriving slightly early allows time for luggage.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">4:00 PM: Relax & Prepare Tickets</p>
+                        <p class="text-sm text-gray-600">Location: Hotel | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Verify your LEGOLAND/SEA LIFE tickets are ready on your phone or printed PDF.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">6:30 PM: Dinner (Vegetarian)</p>
+                        <p class="text-sm text-gray-600">Location: Urban Plates (Suggestion) | Transpo: Drive / Uber (5-10 min)</p>
+                        <p class="text-xs mt-1">Notes: Have a casual dinner close to the hotel.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">8:30 PM: Early Night</p>
+                        <p class="text-sm text-gray-600">Location: Hotel | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Get plenty of rest for a full day at LEGOLAND tomorrow!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 2 Content -->
+            <div id="day2" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Day 2: Monday, Nov 24 - LEGOLAND & SEA LIFE Aquarium</h3>
+                <p class="text-gray-500 mb-4">**Park Hours (Estimate):** Theme Park (10:00 AM – 4:30 PM); SEA LIFE (12:00 PM – 5:00 PM)</p>
+                <div class="itinerary-table">
+                    <table class="w-full text-left rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100 text-gray-600 uppercase text-sm">
+                            <tr>
+                                <th class="py-3 px-6">Time</th>
+                                <th class="py-3 px-6">Activity</th>
+                                <th class="py-3 px-6">Location</th>
+                                <th class="py-3 px-6">Transportation</th>
+                                <th class="py-3 px-6">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">8:00 AM</td>
+                                <td class="py-4 px-6">Wake Up & **Free Breakfast**</td>
+                                <td class="py-4 px-6">The Cassara Carlsbad</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Enjoy the complimentary hotel breakfast.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">9:15 AM</td>
+                                <td class="py-4 px-6">Depart for LEGOLAND</td>
+                                <td class="py-4 px-6">Hotel to Park</td>
+                                <td class="py-4 px-6">Drive / **Walk (10 min)**</td>
+                                <td class="py-4 px-6">The Cassara is very close! Aim for rope drop to minimize wait times.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">10:00 AM</td>
+                                <td class="py-4 px-6">**LEGOLAND Theme Park Opens**</td>
+                                <td class="py-4 px-6">LEGOLAND</td>
+                                <td class="py-4 px-6">On Foot</td>
+                                <td class="py-4 px-6">Head to the back of the park first (Coastersaurus, Dragon) to beat the crowds.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">1:00 PM</td>
+                                <td class="py-4 px-6">Lunch & Mid-Day Break</td>
+                                <td class="py-4 px-6">Inside Park</td>
+                                <td class="py-4 px-6">On Foot</td>
+                                <td class="py-4 px-6">Quick, child-friendly lunch inside the park.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">3:00 PM</td>
+                                <td class="py-4 px-6">Head to SEA LIFE</td>
+                                <td class="py-4 px-6">SEA LIFE Aquarium</td>
+                                <td class="py-4 px-6">On Foot</td>
+                                <td class="py-4 px-6">The aquarium is relaxed, perfect for winding down the day. Closes at 5 PM.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">5:00 PM</td>
+                                <td class="py-4 px-6">Depart Park</td>
+                                <td class="py-4 px-6">LEGOLAND</td>
+                                <td class="py-4 px-6">Drive / Walk</td>
+                                <td class="py-4 px-6">Depart shortly after the aquarium closes.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">6:30 PM</td>
+                                <td class="py-4 px-6">Dinner (Vegetarian)</td>
+                                <td class="py-4 px-6">The Plot or Campfire (Suggestions)</td>
+                                <td class="py-4 px-6">Drive / Uber (15-20 min)</td>
+                                <td class="py-4 px-6">Choose a nicer vegetarian-friendly dinner in the Carlsbad/Oceanside area.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerary-cards space-y-4">
+                    <!-- Cards for Mobile View -->
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">8:00 AM: Wake Up & Free Breakfast</p>
+                        <p class="text-sm text-gray-600">Location: The Cassara Carlsbad | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Enjoy the complimentary hotel breakfast.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">9:15 AM: Depart for LEGOLAND</p>
+                        <p class="text-sm text-gray-600">Location: Hotel to Park | Transpo: Drive / Walk (10 min)</p>
+                        <p class="text-xs mt-1">Notes: The Cassara is very close! Aim for rope drop to minimize wait times.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">10:00 AM: LEGOLAND Theme Park Opens</p>
+                        <p class="text-sm text-gray-600">Location: LEGOLAND | Transpo: On Foot</p>
+                        <p class="text-xs mt-1">Notes: Head to the back of the park first (Coastersaurus, Dragon) to beat the crowds.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">3:00 PM: Head to SEA LIFE</p>
+                        <p class="text-sm text-gray-600">Location: SEA LIFE Aquarium | Transpo: On Foot</p>
+                        <p class="text-xs mt-1">Notes: The aquarium is relaxed, perfect for winding down the day. Closes at 5 PM.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">6:30 PM: Dinner (Vegetarian)</p>
+                        <p class="text-sm text-gray-600">Location: The Plot or Campfire (Suggestions) | Transpo: Drive / Uber (15-20 min)</p>
+                        <p class="text-xs mt-1">Notes: Choose a nicer vegetarian-friendly dinner in the Carlsbad/Oceanside area.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 3 Content -->
+            <div id="day3" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Day 3: Tuesday, Nov 25 - Hotel Transfer & San Diego Arrival</h3>
+                <p class="text-gray-500 mb-4">**Accommodation:** Holiday Inn Express San Diego - Sea World Area</p>
+                <div class="itinerary-table">
+                    <table class="w-full text-left rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100 text-gray-600 uppercase text-sm">
+                            <tr>
+                                <th class="py-3 px-6">Time</th>
+                                <th class="py-3 px-6">Activity</th>
+                                <th class="py-3 px-6">Location</th>
+                                <th class="py-3 px-6">Transportation</th>
+                                <th class="py-3 px-6">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">8:00 AM</td>
+                                <td class="py-4 px-6">**Free Breakfast** & Pack</td>
+                                <td class="py-4 px-6">The Cassara Carlsbad</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Enjoy a final free breakfast. Pack up all belongings completely.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">10:00 AM</td>
+                                <td class="py-4 px-6">Check-out</td>
+                                <td class="py-4 px-6">The Cassara Carlsbad</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Ensure you check out before the 11:00 AM deadline.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">10:30 AM</td>
+                                <td class="py-4 px-6">**Transfer to San Diego**</td>
+                                <td class="py-4 px-6">Carlsbad to Mission Bay</td>
+                                <td class="py-4 px-6">Drive or **Uber**</td>
+                                <td class="py-4 px-6">**Travel Time:** 35–50 minutes. Uber is an option here to avoid extra hotel parking.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">11:30 AM</td>
+                                <td class="py-4 px-6">Arrive & Casual Lunch</td>
+                                <td class="py-4 px-6">Near Holiday Inn Express</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Grab a quick, casual lunch (e.g., Evolution Fast Foods).</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">2:00 PM</td>
+                                <td class="py-4 px-6">Check-in</td>
+                                <td class="py-4 px-6">Holiday Inn Express</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Check in and settle into your new room near SeaWorld.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">4:00 PM</td>
+                                <td class="py-4 px-6">Balboa Park Visit (Optional)</td>
+                                <td class="py-4 px-6">Balboa Park</td>
+                                <td class="py-4 px-6">Drive / Uber (15 min)</td>
+                                <td class="py-4 px-6">Walk the Spanish Village Arts Center or Botanical Building before sunset.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">7:00 PM</td>
+                                <td class="py-4 px-6">Dinner (Thai)</td>
+                                <td class="py-4 px-6">Plumeria Vegetarian Restaurant</td>
+                                <td class="py-4 px-6">Drive / Uber (15 min)</td>
+                                <td class="py-4 px-6">A highly-rated, local vegetarian favorite for a great first dinner in SD.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerary-cards space-y-4">
+                    <!-- Cards for Mobile View -->
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">8:00 AM: Free Breakfast & Pack</p>
+                        <p class="text-sm text-gray-600">Location: The Cassara Carlsbad | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Enjoy a final free breakfast. Pack up all belongings completely.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">10:30 AM: Transfer to San Diego</p>
+                        <p class="text-sm text-gray-600">Location: Carlsbad to Mission Bay | Transpo: Drive or Uber (35–50 min)</p>
+                        <p class="text-xs mt-1">Notes: Uber is an option here to avoid extra hotel parking.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">2:00 PM: Check-in at Holiday Inn Express</p>
+                        <p class="text-sm text-gray-600">Location: Sea World Area | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Check in and settle into your new room near SeaWorld.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">7:00 PM: Dinner (Thai)</p>
+                        <p class="text-sm text-gray-600">Location: Plumeria Vegetarian Restaurant | Transpo: Drive / Uber (15 min)</p>
+                        <p class="text-xs mt-1">Notes: A highly-rated, local vegetarian favorite.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 4 Content -->
+            <div id="day4" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Day 4: Wednesday, Nov 26 - SeaWorld San Diego</h3>
+                <p class="text-gray-500 mb-4">**Park Hours (Estimate):** 10:00 AM – 6:00 PM (Check for extended "Christmas Celebration" hours on the day of the visit).</p>
+                <div class="itinerary-table">
+                    <table class="w-full text-left rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100 text-gray-600 uppercase text-sm">
+                            <tr>
+                                <th class="py-3 px-6">Time</th>
+                                <th class="py-3 px-6">Activity</th>
+                                <th class="py-3 px-6">Location</th>
+                                <th class="py-3 px-6">Transportation</th>
+                                <th class="py-3 px-6">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">8:00 AM</td>
+                                <td class="py-4 px-6">Wake Up & **Free Breakfast**</td>
+                                <td class="py-4 px-6">Holiday Inn Express</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Enjoy the complimentary hotel breakfast.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">9:30 AM</td>
+                                <td class="py-4 px-6">Depart for SeaWorld</td>
+                                <td class="py-4 px-6">Hotel to Park</td>
+                                <td class="py-4 px-6">Taxi / Drive (5-10 min)</td>
+                                <td class="py-4 px-6">The hotel is extremely close; short travel time.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">10:00 AM</td>
+                                <td class="py-4 px-6">**SeaWorld Park Opens**</td>
+                                <td class="py-4 px-6">SeaWorld San Diego</td>
+                                <td class="py-4 px-6">On Foot</td>
+                                <td class="py-4 px-6">Head to a major ride or get an early spot for the Orca Encounter / Dolphin Show.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">12:00 PM</td>
+                                <td class="py-4 px-6">Mid-day Show / Exhibits</td>
+                                <td class="py-4 px-6">Park</td>
+                                <td class="py-4 px-6">On Foot</td>
+                                <td class="py-4 px-6">Use the SeaWorld App to plan showtimes and be early!</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">4:00 PM</td>
+                                <td class="py-4 px-6">Animal Encounters</td>
+                                <td class="py-4 px-6">Park</td>
+                                <td class="py-4 px-6">On Foot</td>
+                                <td class="py-4 px-6">Spend the afternoon viewing the aquariums and exhibits (Shark Encounter, Penguin Encounter).</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">6:00 PM</td>
+                                <td class="py-4 px-6">Depart Park</td>
+                                <td class="py-4 px-6">SeaWorld</td>
+                                <td class="py-4 px-6">Taxi / Drive</td>
+                                <td class="py-4 px-6">If the park is open late for Christmas, consider staying for the lights!</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">7:30 PM</td>
+                                <td class="py-4 px-6">Dinner (Vegan)</td>
+                                <td class="py-4 px-6">Kindred (South Park)</td>
+                                <td class="py-4 px-6">Uber / Drive (20 min)</td>
+                                <td class="py-4 px-6">A fully vegan spot with a unique, fun atmosphere.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerary-cards space-y-4">
+                    <!-- Cards for Mobile View -->
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">8:00 AM: Wake Up & Free Breakfast</p>
+                        <p class="text-sm text-gray-600">Location: Holiday Inn Express | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Enjoy the complimentary hotel breakfast.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">9:30 AM: Depart for SeaWorld</p>
+                        <p class="text-sm text-gray-600">Location: Hotel to Park | Transpo: Taxi / Drive (5-10 min)</p>
+                        <p class="text-xs mt-1">Notes: The hotel is extremely close; short travel time.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">10:00 AM: SeaWorld Park Opens</p>
+                        <p class="text-sm text-gray-600">Location: SeaWorld San Diego | Transpo: On Foot</p>
+                        <p class="text-xs mt-1">Notes: Head to a major ride or get an early spot for the Orca Encounter / Dolphin Show.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">4:00 PM: Animal Encounters</p>
+                        <p class="text-sm text-gray-600">Location: Park | Transpo: On Foot</p>
+                        <p class="text-xs mt-1">Notes: Spend the afternoon viewing the aquariums and exhibits (Shark Encounter, Penguin Encounter).</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">7:30 PM: Dinner (Vegan)</p>
+                        <p class="text-sm text-gray-600">Location: Kindred (South Park) | Transpo: Uber / Drive (20 min)</p>
+                        <p class="text-xs mt-1">Notes: A fully vegan spot with a unique, fun atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 5 Content -->
+            <div id="day5" class="tab-content hidden">
+                <h3 class="text-2xl font-bold text-gray-700 mb-4">Day 5: Thursday, Nov 27 - Departure</h3>
+                <p class="text-gray-500 mb-4">A relaxed final morning before heading to the airport.</p>
+                <div class="itinerary-table">
+                    <table class="w-full text-left rounded-lg overflow-hidden">
+                        <thead class="bg-gray-100 text-gray-600 uppercase text-sm">
+                            <tr>
+                                <th class="py-3 px-6">Time</th>
+                                <th class="py-3 px-6">Activity</th>
+                                <th class="py-3 px-6">Location</th>
+                                <th class="py-3 px-6">Transportation</th>
+                                <th class="py-3 px-6">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">8:00 AM</td>
+                                <td class="py-4 px-6">**Free Breakfast** & Pack</td>
+                                <td class="py-4 px-6">Holiday Inn Express</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Last complimentary breakfast! Ensure all belongings are packed.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">9:30 AM</td>
+                                <td class="py-4 px-6">Morning Activity (Optional)</td>
+                                <td class="py-4 px-6">Cabrillo National Monument</td>
+                                <td class="py-4 px-6">Drive / Uber</td>
+                                <td class="py-4 px-6">Offers great views and is less time-consuming than a large museum before the flight.</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">11:00 AM</td>
+                                <td class="py-4 px-6">Check-out</td>
+                                <td class="py-4 px-6">Holiday Inn Express</td>
+                                <td class="py-4 px-6">N/A</td>
+                                <td class="py-4 px-6">Ensure check-out is completed by the deadline.</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 font-semibold">12:00 PM</td>
+                                <td class="py-4 px-6">Head to Airport / Depart</td>
+                                <td class="py-4 px-6">San Diego International Airport (SAN)</td>
+                                <td class="py-4 px-6">Drive / Uber</td>
+                                <td class="py-4 px-6">Allow plenty of time for travel, especially on a holiday travel day.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerary-cards space-y-4">
+                    <!-- Cards for Mobile View -->
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">8:00 AM: Free Breakfast & Pack</p>
+                        <p class="text-sm text-gray-600">Location: Holiday Inn Express | Transpo: N/A</p>
+                        <p class="text-xs mt-1">Notes: Last complimentary breakfast! Ensure all belongings are packed.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">9:30 AM: Morning Activity (Optional)</p>
+                        <p class="text-sm text-gray-600">Location: Cabrillo National Monument | Transpo: Drive / Uber</p>
+                        <p class="text-xs mt-1">Notes: Offers great views and is less time-consuming than a large museum before the flight.</p>
+                    </div>
+                    <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
+                        <p class="font-bold text-lg text-blue-700">12:00 PM: Head to Airport / Depart</p>
+                        <p class="text-sm text-gray-600">Location: San Diego International Airport (SAN) | Transpo: Drive / Uber</p>
+                        <p class="text-xs mt-1">Notes: Allow plenty of time for travel, especially on a holiday travel day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            function showDay(day) {
+                // Hide all content and remove active state from buttons
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                // Show the selected content and set active state on the button
+                const selectedContent = document.getElementById(day);
+                const selectedButton = document.querySelector(`.tab-button[data-day="${day}"]`);
+
+                if (selectedContent) {
+                    selectedContent.classList.remove('hidden');
+                }
+                if (selectedButton) {
+                    selectedButton.classList.add('active');
+                }
+            }
+
+            // Event listener for tab clicks
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const day = button.getAttribute('data-day');
+                    showDay(day);
+                });
+            });
+
+            // Set the default tab to Day 1 on load
+            showDay('day1');
+        });
+    </script>
+</body>
+</html>
