@@ -63,6 +63,26 @@
             </p>
         </header>
 
+        <!-- Map Overview Card -->
+        <div class="bg-indigo-50 border-l-4 border-indigo-400 p-4 rounded-lg mb-8 card-shadow">
+            <h2 class="text-xl font-bold text-indigo-800 mb-2 flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Trip Map Overview
+            </h2>
+            <p class="text-gray-700">
+                View all the major itinerary points (hotels, parks, key restaurants) laid out on a Google Map.
+            </p>
+            <a href="https://www.google.com/maps/search/The+Cassara+Carlsbad+Hilton,+LEGOLAND+California,+Holiday+Inn+Express+San+Diego+Sea+World+Area,+SeaWorld+San+Diego,+Kindred+South+Park" target="_blank" class="inline-flex items-center mt-3 px-4 py-2 bg-indigo-500 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-indigo-600 transition duration-150">
+                Open Full Trip Map
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+            </a>
+        </div>
+
         <!-- Logistics & Transportation Card -->
         <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg mb-8 card-shadow">
             <h2 class="text-xl font-bold text-yellow-800 mb-2 flex items-center">
@@ -109,7 +129,12 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">3:00 PM</td>
                                 <td class="py-4 px-6">Check-in at The Cassara</td>
-                                <td class="py-4 px-6">Carlsbad</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=The+Cassara+Carlsbad%2C+Tapestry+Collection+by+Hilton" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Carlsbad
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">N/A</td>
                                 <td class="py-4 px-6">Check-in time is generally after 4:00 PM. Arriving slightly early allows time for luggage.</td>
                             </tr>
@@ -123,7 +148,12 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">6:30 PM</td>
                                 <td class="py-4 px-6">Dinner (Vegetarian)</td>
-                                <td class="py-4 px-6">Urban Plates (Suggestion)</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Urban+Plates+Carlsbad" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Urban Plates (Suggestion)
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / Uber (5-10 min)</td>
                                 <td class="py-4 px-6">Have a casual dinner close to the hotel.</td>
                             </tr>
@@ -141,7 +171,12 @@
                     <!-- Cards for Mobile View -->
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">3:00 PM: Check-in at The Cassara</p>
-                        <p class="text-sm text-gray-600">Location: Carlsbad | Transpo: N/A</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=The+Cassara+Carlsbad%2C+Tapestry+Collection+by+Hilton" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Carlsbad
+                            </a> | Transpo: N/A
+                        </p>
                         <p class="text-xs mt-1">Notes: Check-in time is generally after 4:00 PM. Arriving slightly early allows time for luggage.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
@@ -151,7 +186,12 @@
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">6:30 PM: Dinner (Vegetarian)</p>
-                        <p class="text-sm text-gray-600">Location: Urban Plates (Suggestion) | Transpo: Drive / Uber (5-10 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=Urban+Plates+Carlsbad" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Urban Plates (Suggestion)
+                            </a> | Transpo: Drive / Uber (5-10 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: Have a casual dinner close to the hotel.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
@@ -188,14 +228,24 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">9:15 AM</td>
                                 <td class="py-4 px-6">Depart for LEGOLAND</td>
-                                <td class="py-4 px-6">Hotel to Park</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=LEGOLAND+California" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Hotel to Park
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / **Walk (10 min)**</td>
                                 <td class="py-4 px-6">The Cassara is very close! Aim for rope drop to minimize wait times.</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">10:00 AM</td>
                                 <td class="py-4 px-6">**LEGOLAND Theme Park Opens**</td>
-                                <td class="py-4 px-6">LEGOLAND</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=LEGOLAND+California" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        LEGOLAND
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">On Foot</td>
                                 <td class="py-4 px-6">Head to the back of the park first (Coastersaurus, Dragon) to beat the crowds.</td>
                             </tr>
@@ -209,7 +259,12 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">3:00 PM</td>
                                 <td class="py-4 px-6">Head to SEA LIFE</td>
-                                <td class="py-4 px-6">SEA LIFE Aquarium</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=SEA+LIFE+Aquarium%2C+Carlsbad" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        SEA LIFE Aquarium
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">On Foot</td>
                                 <td class="py-4 px-6">The aquarium is relaxed, perfect for winding down the day. Closes at 5 PM.</td>
                             </tr>
@@ -223,7 +278,12 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">6:30 PM</td>
                                 <td class="py-4 px-6">Dinner (Vegetarian)</td>
-                                <td class="py-4 px-6">The Plot or Campfire (Suggestions)</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=The+Plot+Oceanside+or+Campfire+Carlsbad" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        The Plot or Campfire (Suggestions)
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / Uber (15-20 min)</td>
                                 <td class="py-4 px-6">Choose a nicer vegetarian-friendly dinner in the Carlsbad/Oceanside area.</td>
                             </tr>
@@ -239,22 +299,42 @@
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">9:15 AM: Depart for LEGOLAND</p>
-                        <p class="text-sm text-gray-600">Location: Hotel to Park | Transpo: Drive / Walk (10 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=LEGOLAND+California" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Hotel to Park
+                            </a> | Transpo: Drive / Walk (10 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: The Cassara is very close! Aim for rope drop to minimize wait times.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">10:00 AM: LEGOLAND Theme Park Opens</p>
-                        <p class="text-sm text-gray-600">Location: LEGOLAND | Transpo: On Foot</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=LEGOLAND+California" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                LEGOLAND
+                            </a> | Transpo: On Foot
+                        </p>
                         <p class="text-xs mt-1">Notes: Head to the back of the park first (Coastersaurus, Dragon) to beat the crowds.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">3:00 PM: Head to SEA LIFE</p>
-                        <p class="text-sm text-gray-600">Location: SEA LIFE Aquarium | Transpo: On Foot</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=SEA+LIFE+Aquarium%2C+Carlsbad" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                SEA LIFE Aquarium
+                            </a> | Transpo: On Foot
+                        </p>
                         <p class="text-xs mt-1">Notes: The aquarium is relaxed, perfect for winding down the day. Closes at 5 PM.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">6:30 PM: Dinner (Vegetarian)</p>
-                        <p class="text-sm text-gray-600">Location: The Plot or Campfire (Suggestions) | Transpo: Drive / Uber (15-20 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=The+Plot+Oceanside+or+Campfire+Carlsbad" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                The Plot or Campfire (Suggestions)
+                            </a> | Transpo: Drive / Uber (15-20 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: Choose a nicer vegetarian-friendly dinner in the Carlsbad/Oceanside area.</p>
                     </div>
                 </div>
@@ -293,35 +373,60 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">10:30 AM</td>
                                 <td class="py-4 px-6">**Transfer to San Diego**</td>
-                                <td class="py-4 px-6">Carlsbad to Mission Bay</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Carlsbad+to+Holiday+Inn+Express+San+Diego+Sea+World+Area" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Carlsbad to Mission Bay
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive or **Uber**</td>
                                 <td class="py-4 px-6">**Travel Time:** 35–50 minutes. Uber is an option here to avoid extra hotel parking.</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">11:30 AM</td>
                                 <td class="py-4 px-6">Arrive & Casual Lunch</td>
-                                <td class="py-4 px-6">Near Holiday Inn Express</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Evolution+Fast+Foods+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Near Holiday Inn Express
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">N/A</td>
                                 <td class="py-4 px-6">Grab a quick, casual lunch (e.g., Evolution Fast Foods).</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">2:00 PM</td>
                                 <td class="py-4 px-6">Check-in</td>
-                                <td class="py-4 px-6">Holiday Inn Express</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+San+Diego+-+Sea+World+Area" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Holiday Inn Express
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">N/A</td>
                                 <td class="py-4 px-6">Check in and settle into your new room near SeaWorld.</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">4:00 PM</td>
                                 <td class="py-4 px-6">Balboa Park Visit (Optional)</td>
-                                <td class="py-4 px-6">Balboa Park</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Balboa+Park%2C+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Balboa Park
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / Uber (15 min)</td>
                                 <td class="py-4 px-6">Walk the Spanish Village Arts Center or Botanical Building before sunset.</td>
                             </tr>
                             <tr class="hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">7:00 PM</td>
                                 <td class="py-4 px-6">Dinner (Thai)</td>
-                                <td class="py-4 px-6">Plumeria Vegetarian Restaurant</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Plumeria+Vegetarian+Restaurant" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Plumeria Vegetarian Restaurant
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / Uber (15 min)</td>
                                 <td class="py-4 px-6">A highly-rated, local vegetarian favorite for a great first dinner in SD.</td>
                             </tr>
@@ -337,17 +442,32 @@
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">10:30 AM: Transfer to San Diego</p>
-                        <p class="text-sm text-gray-600">Location: Carlsbad to Mission Bay | Transpo: Drive or Uber (35–50 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=Carlsbad+to+Holiday+Inn+Express+San+Diego+Sea+World+Area" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Carlsbad to Mission Bay
+                            </a> | Transpo: Drive or Uber (35–50 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: Uber is an option here to avoid extra hotel parking.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">2:00 PM: Check-in at Holiday Inn Express</p>
-                        <p class="text-sm text-gray-600">Location: Sea World Area | Transpo: N/A</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=Holiday+Inn+Express+San+Diego+-+Sea+World+Area" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Sea World Area
+                            </a> | Transpo: N/A
+                        </p>
                         <p class="text-xs mt-1">Notes: Check in and settle into your new room near SeaWorld.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">7:00 PM: Dinner (Thai)</p>
-                        <p class="text-sm text-gray-600">Location: Plumeria Vegetarian Restaurant | Transpo: Drive / Uber (15 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=Plumeria+Vegetarian+Restaurant" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Plumeria Vegetarian Restaurant
+                            </a> | Transpo: Drive / Uber (15 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: A highly-rated, local vegetarian favorite.</p>
                     </div>
                 </div>
@@ -379,14 +499,24 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">9:30 AM</td>
                                 <td class="py-4 px-6">Depart for SeaWorld</td>
-                                <td class="py-4 px-6">Hotel to Park</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=SeaWorld+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Hotel to Park
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Taxi / Drive (5-10 min)</td>
                                 <td class="py-4 px-6">The hotel is extremely close; short travel time.</td>
                             </tr>
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">10:00 AM</td>
                                 <td class="py-4 px-6">**SeaWorld Park Opens**</td>
-                                <td class="py-4 px-6">SeaWorld San Diego</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=SeaWorld+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        SeaWorld San Diego
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">On Foot</td>
                                 <td class="py-4 px-6">Head to a major ride or get an early spot for the Orca Encounter / Dolphin Show.</td>
                             </tr>
@@ -414,7 +544,12 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">7:30 PM</td>
                                 <td class="py-4 px-6">Dinner (Vegan)</td>
-                                <td class="py-4 px-6">Kindred (South Park)</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Kindred+South+Park+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Kindred (South Park)
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Uber / Drive (20 min)</td>
                                 <td class="py-4 px-6">A fully vegan spot with a unique, fun atmosphere.</td>
                             </tr>
@@ -430,12 +565,22 @@
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">9:30 AM: Depart for SeaWorld</p>
-                        <p class="text-sm text-gray-600">Location: Hotel to Park | Transpo: Taxi / Drive (5-10 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=SeaWorld+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Hotel to Park
+                            </a> | Transpo: Taxi / Drive (5-10 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: The hotel is extremely close; short travel time.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">10:00 AM: SeaWorld Park Opens</p>
-                        <p class="text-sm text-gray-600">Location: SeaWorld San Diego | Transpo: On Foot</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=SeaWorld+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                SeaWorld San Diego
+                            </a> | Transpo: On Foot
+                        </p>
                         <p class="text-xs mt-1">Notes: Head to a major ride or get an early spot for the Orca Encounter / Dolphin Show.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
@@ -445,7 +590,12 @@
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">7:30 PM: Dinner (Vegan)</p>
-                        <p class="text-sm text-gray-600">Location: Kindred (South Park) | Transpo: Uber / Drive (20 min)</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=Kindred+South+Park+San+Diego" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Kindred (South Park)
+                            </a> | Transpo: Uber / Drive (20 min)
+                        </p>
                         <p class="text-xs mt-1">Notes: A fully vegan spot with a unique, fun atmosphere.</p>
                     </div>
                 </div>
@@ -477,7 +627,12 @@
                             <tr class="border-b hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">9:30 AM</td>
                                 <td class="py-4 px-6">Morning Activity (Optional)</td>
-                                <td class="py-4 px-6">Cabrillo National Monument</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=Cabrillo+National+Monument" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        Cabrillo National Monument
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / Uber</td>
                                 <td class="py-4 px-6">Offers great views and is less time-consuming than a large museum before the flight.</td>
                             </tr>
@@ -491,7 +646,12 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="py-4 px-6 font-semibold">12:00 PM</td>
                                 <td class="py-4 px-6">Head to Airport / Depart</td>
-                                <td class="py-4 px-6">San Diego International Airport (SAN)</td>
+                                <td class="py-4 px-6">
+                                    <a href="https://www.google.com/maps/search/?api=1&query=San+Diego+International+Airport+(SAN)" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
+                                        San Diego International Airport (SAN)
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-7h7m0 0v7m0-7L13 10" /></svg>
+                                    </a>
+                                </td>
                                 <td class="py-4 px-6">Drive / Uber</td>
                                 <td class="py-4 px-6">Allow plenty of time for travel, especially on a holiday travel day.</td>
                             </tr>
@@ -507,12 +667,22 @@
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">9:30 AM: Morning Activity (Optional)</p>
-                        <p class="text-sm text-gray-600">Location: Cabrillo National Monument | Transpo: Drive / Uber</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=Cabrillo+National+Monument" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Cabrillo National Monument
+                            </a> | Transpo: Drive / Uber
+                        </p>
                         <p class="text-xs mt-1">Notes: Offers great views and is less time-consuming than a large museum before the flight.</p>
                     </div>
                     <div class="itinerary-item p-4 bg-blue-50 rounded-lg">
                         <p class="font-bold text-lg text-blue-700">12:00 PM: Head to Airport / Depart</p>
-                        <p class="text-sm text-gray-600">Location: San Diego International Airport (SAN) | Transpo: Drive / Uber</p>
+                        <p class="text-sm text-gray-600">
+                            Location: 
+                            <a href="https://www.google.com/maps/search/?api=1&query=San+Diego+International+Airport+(SAN)" target="_blank" class="text-blue-600 hover:text-blue-800 font-medium">
+                                San Diego International Airport (SAN)
+                            </a> | Transpo: Drive / Uber
+                        </p>
                         <p class="text-xs mt-1">Notes: Allow plenty of time for travel, especially on a holiday travel day.</p>
                     </div>
                 </div>
